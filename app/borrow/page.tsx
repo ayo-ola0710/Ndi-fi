@@ -47,7 +47,7 @@ const chartConfig = {
 
 const Borrow = () => {
   return (
-    <div className="ml-20 mr-20">
+    <div className="ml-4 md:ml-20 mr-4 md:mr-20">
       <p className="text-3xl pt-40 pb-10">Collateral Management</p>
       <div className="pt-3 space-y-3">
         {Collateral.map((collateral, index) => (
@@ -55,8 +55,8 @@ const Borrow = () => {
         ))}
       </div>
 
-      <div className="flex gap-15">
-        <div className="bg-[#161A1A0D] border border-[#547F7F99] w-140 rounded-md mt-10 mb-20 p-10">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-15">
+        <div className="bg-[#161A1A0D] border border-[#547F7F99] w-full max-w-140 rounded-md mt-10 mb-20 p-10">
           <p className="text-3xl">Borrow</p>
           <div className="text-sm flex justify-between items-center pt-5 space-y-3">
             <p className="text-[#39D4DF]">Collateral Value</p>
@@ -80,7 +80,7 @@ const Borrow = () => {
               type="text"
               className="bg-[#161A1A] border border-[#547F7F99] text-white relative py-6"
             />
-            <Button className="absolute left-130 mt-1.5 text-lg bg-[#39D4DF] hover:bg-[#6ceff8] cursor-pointer">
+            <Button className="absolute md:left-130 left-65 md-30 mt-1.5 text-lg bg-[#39D4DF] hover:bg-[#6ceff8] cursor-pointer">
               MAX
             </Button>
           </div>
@@ -103,12 +103,12 @@ const Borrow = () => {
             Borrow DAI
           </Button>
         </div>
-        <div className="bg-[#161A1A0D] border border-[#547F7F99] w-130 rounded-md mt-10 mb-20 p-10">
+        <div className="bg-[#161A1A0D] border border-[#547F7F99] w-full max-w-140 rounded-md mt-10 mb-20 p-10">
           <p className="text-3xl">Active Loan</p>
           <div>
             <ChartContainer
               config={chartConfig}
-              className="mx-auto aspect-square max-h-[300px]"
+              className="mx-auto aspect-square max-h-[250px]"
             >
               <RadialBarChart
                 data={chartData}
@@ -121,7 +121,7 @@ const Borrow = () => {
                   gridType="circle"
                   radialLines={false}
                   stroke="none"
-                  className="first:fill-[#38C00A] last:fill-[#171B1B]"
+                  className="first:fill-[#38C00A] last:fill-background"
                   polarRadius={[86, 74]}
                 />
                 <RadialBar dataKey="visitors" background cornerRadius={10} />
@@ -159,20 +159,20 @@ const Borrow = () => {
                 </PolarRadiusAxis>
               </RadialBarChart>
             </ChartContainer>
-            <div className="px-10 space-y-5">
-              <div className="flex items-center justify-between text-sm">
-                <p className="text-[#39D4DF]">Total Borrowed</p>
-                <p>5,000 DAI</p>
-              </div>
-              <div className="flex items-center justify-between text-sm">
-                <p className="text-[#39D4DF]">Interest Rate (APY)</p>
-                <p>3.5%</p>
-              </div>
-            </div>
-            <Button className="bg-transparent border border-[#06F9F9] px-15 mt-7 hover:bg-[#06F9F9] hover:scale-105">
-              Repay Loan
-            </Button>
           </div>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between text-sm">
+              <p className="text-[#39D4DF]">Total Borrowed</p>
+              <p>5,000 DAI</p>
+            </div>
+            <div className="flex items-center justify-between text-sm">
+              <p className="text-[#39D4DF]">Interest Rate (APY)</p>
+              <p>3.5%</p>
+            </div>
+          </div>
+          <Button className="bg-transparent px-15 mt-15 border border-[#06F9F9] text-[#06F9F9] hover:text-white hover:bg-[#39D4DF] hover:scale-105 cursor-pointer">
+            Repay Loan
+          </Button>
         </div>
       </div>
     </div>

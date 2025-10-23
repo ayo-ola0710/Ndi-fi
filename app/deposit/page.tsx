@@ -11,10 +11,10 @@ import { GiSpanner } from "react-icons/gi";
 
 const Deposit = () => {
   return (
-    <div className="ml-20 mr-20">
+    <div className="ml-4 md:ml-20 mr-4 md:mr-20">
       <p className="text-4xl pt-40">DAI Vault</p>
       <div>
-        <Card className="bg-[#547F7F33] w-60 h-55 border-none -pb-20">
+        <Card className="bg-[#547F7F33] w-full max-w-60 h-55 border-none -pb-20">
           <CardHeader>
             <CardTitle className="text-[#969696] text-[15px] flex flex-row  items-end gap-2">
               <div className="bg-[#06F9F9] w-8 h-8 "></div>
@@ -31,8 +31,8 @@ const Deposit = () => {
         </Card>
       </div>
       <div>
-        <div className="pt-8 flex flex-row gap-10">
-          <Card className="bg-[#547F7F33] w-90 h-25 -pb-20 border border-[#547F7F99]">
+        <div className="pt-8 flex flex-col md:flex-row gap-4 md:gap-10">
+          <Card className="bg-[#547F7F33] w-full max-w-90 h-25 -pb-20 border border-[#547F7F99]">
             <CardHeader>
               <CardTitle className="text-[#969696] text-[15px] -mt-2 ">
                 <p className="text-sm">Vault Share Price</p>
@@ -42,7 +42,7 @@ const Deposit = () => {
               <p className="text-2xl text-white -mt-5">$ 1.05</p>
             </CardContent>
           </Card>
-          <Card className="bg-[#547F7F33] w-90 h-25 -pb-20 border border-[#547F7F99]">
+          <Card className="bg-[#547F7F33] w-full max-w-90 h-25 -pb-20 border border-[#547F7F99]">
             <CardHeader>
               <CardTitle className="text-[#969696] text-[15px] -mt-2 ">
                 <p className="text-sm">APY</p>
@@ -56,11 +56,11 @@ const Deposit = () => {
         </div>
       </div>
       <div className="pt-10 space-y-8">
-        <div className="bg-[#987E114D] border border-[#D6B00F] text-[#D6B00F] p-6 w-190 rounded-md flex items-center gap-2">
+        <div className="bg-[#987E114D] border border-[#D6B00F] text-[#D6B00F] p-6 w-full max-w-190 rounded-md flex items-center gap-2">
           <IoIosWarning className="text-xl" />
           Staking is temporarily paused as the cap has been reached.
         </div>
-        <div className="bg-[#CC352D33] border border-[#D61208] text-[#E58B86] p-6 w-190 rounded-md flex items-center gap-2">
+        <div className="bg-[#CC352D33] border border-[#D61208] text-[#E58B86] p-6 w-full max-w-190 rounded-md flex items-center gap-2">
           <GiSpanner className="text-xl" />
           The platform will undergo scheduled maintenance soon.
         </div>

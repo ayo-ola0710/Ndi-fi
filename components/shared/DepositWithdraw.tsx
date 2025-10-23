@@ -10,7 +10,7 @@ const DepositWithdraw = () => {
   const [amount, setAmount] = useState("");
 
   return (
-    <div className=" text-white w-300 mt-10">
+    <div className=" text-white w-full max-w-300 mt-10">
       <Card className="w-full max-w-3xl bg-[#547F7F1A] border border-[#547F7F99] rounded-xl shadow-lg backdrop-blur-md">
         <div className="flex justify-between bg-[#161A1A]  rounded-lg mx-4 mt-4 overflow-hidden p-1">
           <button
@@ -43,9 +43,9 @@ const DepositWithdraw = () => {
                 placeholder="0.00"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="text-3xl text-white bg-[#161A1A] border border-[#547F7F99] py-6 relative "
+                className="text-3xl text-white bg-[#161A1A] border border-[#547F7F99] py-6 relative w-full"
               />
-              <div className="flex items-center gap-4 absolute left-156">
+              <div className="flex items-center gap-4 absolute right-7 md:right-4">
                 <span className="text-gray-400 text-lg font-semibold">DAI</span>
                 <Button
                   variant="secondary"
@@ -60,7 +60,7 @@ const DepositWithdraw = () => {
             </p>
           </div>
 
-          <Button className="w-50 bg-[#06F9F9] hover:bg-[#05eaea] text-black font-semibold text-lg py-6 rounded-md hover:scale-105">
+          <Button className="w-full bg-[#06F9F9] hover:bg-[#05eaea] text-black font-semibold text-lg py-6 rounded-md hover:scale-105">
             {activeTab === "deposit" ? "Deposit" : "Withdraw"}
           </Button>
         </CardContent>

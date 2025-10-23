@@ -12,10 +12,10 @@ export default function ValidatorsTable() {
   return (
     <div className="bg-[#547F7F33] border border-[#547F7F99] rounded-xl w-full max-w-6xl overflow-hidden ">
       {/* Header */}
-      <div className="flex justify-between px-6 py-3 border-b border-[#547F7F99] text-gray-300 font-semibold">
-        <div className="w-1/3">Validator</div>
-        <div className="w-1/3">Staked</div>
-        <div className="w-1/3 text-right">Effective APY</div>
+      <div className="flex flex-row justify-between px-6 py-3 border-b border-[#547F7F99] text-gray-300 font-semibold">
+        <div className=" md:w-1/3 mb-2 md:mb-0">Validator</div>
+        <div className=" md:w-1/3 mb-2 md:mb-0">Staked</div>
+        <div className=" md:w-1/3 text-left md:text-right">Effective APY</div>
       </div>
 
       {/* Rows */}
