@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface ValueProps {
   name: string;
   totalDeposits: string;
@@ -16,7 +18,11 @@ const VaultRow = ({
   apy,
 }: ValueProps) => {
   return (
-    <div className="flex flex-row items-center justify-between bg-[#547F7F33] px-6 py-4 border-b border-[#547F7F99] overflow-x-hidden">
+    <motion.div
+      className="flex flex-row items-center justify-between bg-[#547F7F33] px-6 py-4 border-b border-[#547F7F99] overflow-x-hidden"
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.2 }}
+    >
       {/* Vault Name */}
       <div className="flex items-center gap-3 w-full md:w-1/5 mb-2 md:mb-0">
         <div className="w-8 h-8 bg-gray-400 rounded-full"></div>
@@ -68,7 +74,7 @@ const VaultRow = ({
         </div>
         <span className="text-white font-medium">{apy}%</span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

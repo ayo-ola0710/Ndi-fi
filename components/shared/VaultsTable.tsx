@@ -29,7 +29,7 @@ const vaults = [
 
 const VaultsTable = () => {
   return (
-    <div className="bg-[#547F7F33] text-white rounded-2xl overflow-hidden border border-[#547F7F99] w-full md:max-w-6xl ml-5 md:mx-auto mt-10 min-w-[800px]">
+    <div className="bg-[#547F7F33] text-white rounded-2xl  border border-[#547F7F99] w-full md:max-w-6xl ml-5 md:mx-auto mt-10 min-w-[800px] overflow-x-hidden">
       {/* Header */}
       <div className="flex flex-row justify-between px-6 py-4 border-b border-gray-700 font-semibold text-gray-300">
         <div className="w-full md:w-1/5 mb-2 md:mb-0">Vault</div>

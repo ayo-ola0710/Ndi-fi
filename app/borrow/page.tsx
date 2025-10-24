@@ -12,6 +12,7 @@ import {
   RadialBarChart,
 } from "recharts";
 import { ChartConfig, ChartContainer } from "@/components/ui/chart";
+import { motion } from "framer-motion";
 
 const Collateral = [
   {
@@ -47,7 +48,13 @@ const chartConfig = {
 
 const Borrow = () => {
   return (
-    <div className="ml-4 md:ml-20 mr-4 md:mr-20">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="ml-4 md:ml-20 mr-4 md:mr-20"
+    >
       <p className="text-3xl pt-40 pb-10">Collateral Management</p>
       <div className="pt-3 space-y-3">
         {Collateral.map((collateral, index) => (
@@ -80,7 +87,7 @@ const Borrow = () => {
               type="text"
               className="bg-[#161A1A] border border-[#547F7F99] text-white relative py-6"
             />
-            <Button className="absolute md:left-130 left-65 md-30 mt-1.5 text-lg bg-[#39D4DF] hover:bg-[#6ceff8] cursor-pointer">
+            <Button className="absolute md:left-125 left-65 md-30 mt-1.5 text-lg bg-[#39D4DF] hover:bg-[#6ceff8] cursor-pointer">
               MAX
             </Button>
           </div>
@@ -175,7 +182,7 @@ const Borrow = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

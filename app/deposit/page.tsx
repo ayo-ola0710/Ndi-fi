@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -8,10 +10,17 @@ import {
 import DepositWithdraw from "@/components/shared/DepositWithdraw";
 import { IoIosWarning } from "react-icons/io";
 import { GiSpanner } from "react-icons/gi";
+import { motion } from "framer-motion";
 
 const Deposit = () => {
   return (
-    <div className="ml-4 md:ml-20 mr-4 md:mr-20">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="ml-4 md:ml-20 mr-4 md:mr-20"
+    >
       <p className="text-4xl pt-40">DAI Vault</p>
       <div>
         <Card className="bg-[#547F7F33] w-full max-w-60 h-55 border-none -pb-20">
@@ -68,7 +77,7 @@ const Deposit = () => {
       <div className="mt-20 mb-40">
         <DepositWithdraw />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

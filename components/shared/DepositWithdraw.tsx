@@ -45,7 +45,7 @@ const DepositWithdraw = () => {
                 onChange={(e) => setAmount(e.target.value)}
                 className="text-3xl text-white bg-[#161A1A] border border-[#547F7F99] py-6 relative w-full"
               />
-              <div className="flex items-center gap-4 absolute right-7 md:right-4">
+              <div className="flex items-center gap-4 absolute right-7 md:right-7">
                 <span className="text-gray-400 text-lg font-semibold">DAI</span>
                 <Button
                   variant="secondary"

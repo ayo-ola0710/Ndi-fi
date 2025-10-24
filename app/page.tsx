@@ -1,10 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import VaultsTable from "@/components/shared/VaultsTable";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="flex justify-center pt-40 px-4">
         <div className="flex flex-row  items-center gap-10 bg-[#547F7F33] w-full max-w-4xl md:max-w-6xl px-4 md:px-15 py-5 justify-between">
           <div className="space-y-3  lg:text-left">
@@ -116,12 +124,14 @@ const Home = () => {
         </div>
       </div>
       <div className="mb-30">
-        <div className="flex justify-center md:-ml-260 pt-10">
+        <div className="flex justify-center -ml-200 md:-ml-260 pt-10">
           <p className="text-2xl">Vaults</p>
         </div>
-        <VaultsTable />
+        <div className="overflow-x-hidden">
+          <VaultsTable />
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

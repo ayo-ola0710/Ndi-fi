@@ -1,7 +1,10 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import ValidatorsTable from "@/components/shared/ValidatorsTable";
+import { motion } from "framer-motion";
 
 const stat = [
   { title: "Total Staked", value: "$ 1,235,123", change: "+3.2%" },
@@ -12,7 +15,13 @@ const stat = [
 
 const Stake = () => {
   return (
-    <div className="pt-40 ml-4 md:ml-20 mr-4 md:mr-20">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="pt-40 ml-4 md:ml-20 mr-4 md:mr-20"
+    >
       <p className="text-4xl pb-9">Stake</p>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl mb-8">
         {stat.map((item, i) => (
@@ -99,7 +108,7 @@ const Stake = () => {
       <div className="md:pr-9 mt-40 mb-40">
         <ValidatorsTable />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
