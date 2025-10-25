@@ -56,7 +56,7 @@ const Navbar = () => {
         </div>
       )}
       <motion.div
-        className="flex justify-between items-center px-4 md:px-20 py-5 border-b border-[#141616] fixed top-0 w-full"
+        className="flex justify-between items-center px-4 md:px-20 py-5 bg-[#141616] border-b border-[#141616] fixed top-0 w-full"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
